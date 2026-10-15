@@ -1,0 +1,360 @@
+<!-- ================= HERO ================= -->
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <p class="hero-tag">Solutions informatiques</p>
+    <h1 class="hero-title">Nos <span>savoir-faire</span> à la une</h1>
+    <p class="hero-text">
+      Développement web & mobile, infogérance et formations —
+      nous vous accompagnerons vers la réussite numérique.
+    </p>
+
+    <!-- Carrousel de formations -->
+    <div class="formations-carousel-wrap" >
+      <button class="formations-carousel-arrow formations-carousel-arrow-prev" id="fcPrev"
+        aria-label="Formation précédente">
+        <svg class="icon" viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      <div class="formations-carousel" id="formationsCarousel">
+        @for (item of infos; track item.id) {
+        <div routerLink="contact" class="formation-slide">
+          <div class="formation-slide-image">
+            <img src="{{item.image}}" alt="{{item.title}}" loading="lazy">
+            <span class="formation-slide-level">{{item.tag}}</span>
+          </div>
+          <div class="formation-slide-body">
+            <h3>{{item.title }}</h3>
+            <p>{{item.description}}</p>
+            <a routerLink="contact" class="formation-slide-link">
+              En savoir plus
+              <svg class="icon" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        }
+      </div>
+
+      <button class="formations-carousel-arrow formations-carousel-arrow-next" id="fcNext"
+        aria-label="Formation suivante">
+        <svg class="icon" viewBox="0 0 24 24">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="formations-carousel-progress" id="fcProgress" aria-hidden="true"></div>
+  </div>
+</section>
+
+
+<!-- ================= FORMATIONS ================= -->
+<section class="section formations" id="formations">
+  <div class="container">
+    <p class="tag center">Montez en compétences</p>
+    <h2 class="section-title">Nos Formations</h2>
+    <p class="section-subtitle">
+      À l'ère de l'intelligence artificielle, savoir lire et comprendre le code généré est devenu une compétence
+      indispensable.
+    </p>
+
+    <!-- Carte vidéo de présentation -->
+    <div class="video-promo">
+      <div class="video-card">
+        
+        <iframe class="video-iframe" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fgroupe.informatservice%2Fvideos%2F624138430090529%2F&show_text=false&width=560&t=0"
+          title="Vidéo de présentation InformatService"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="formations-grid">
+      @for (item of formations; track item.id) {
+      <div class="formation-card">
+        <div class="formation-image">
+          <img src="{{item.image}}" alt="{{item.title}}" loading="lazy">
+        </div>
+        <div class="formation-header">
+          <div class="formation-header-icon">$<!-- {ICONS.graduation} --></div>
+          <span class="formation-level">{{item.level}}</span>
+          <h3>{{item.title}}</h3>
+        </div>
+        <div class="formation-body">
+          <ul class="formation-modules">
+            @for(m of item.modules; track $index){
+            <li><svg class="icon" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12" />
+              </svg><span>{{m}}</span></li>
+            }
+
+          </ul>
+          <a routerLink="contact" class="btn">S'inscrire</a>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<!-- <section class="section services">
+  <div class="container">
+    <p class="tag center">Nos expertises</p>
+    <h2 class="section-title">Nos Services</h2>
+    <p class="section-subtitle">
+      Des solutions  digitales.
+    </p>
+    <div class="services-grid" >
+      @for (item of services; track $index) {
+      <div class="service-card">
+        <div class="service-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
+      </div>
+      }
+    </div>
+  </div>
+</section> -->
+
+<!-- ================= RÉALISATIONS ================= -->
+<!-- <section class="section projects" id="projets">
+  <div class="container">
+    <p class="tag center">Nos réalisations</p>
+    <h2 class="section-title">Projets réalisés</h2>
+    <p class="section-subtitle">
+      Découvrez une sélection de projets que nous avons livrés avec succès à nos clients.
+    </p>
+
+   <div class="projects-filter" id="projectsFilter">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="cloud">Cloud</button>
+      <button class="filter-btn" data-filter="securite">Sécurité</button>
+    </div> 
+
+    <div class="projects-grid">
+      @for (p of projects; track p.id) {
+      <div class="project-card">
+        <div class="project-image">
+          <span class="project-category-badge">{{p.category}}</span>
+          <img src="{{p.image}}" alt="${p.title}" loading="lazy">
+          <div class="project-overlay">
+            <p>{{p.description}}</p>
+            <div class="project-tags">
+               {p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')} 
+            </div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>{{p.title}}</h3>
+          <div class="project-meta">
+            <span class="project-client"></span>
+            <span class="project-year">{{p.year}}</span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section> -->
+
+<!-- ================= FONDATEURS ================= -->
+<!-- <section class="section founders" id="equipe">
+  <div class="container">
+    <p class="tag center">Notre équipe</p>
+    <h2 class="section-title">Les fondateurs</h2>
+    <p class="section-subtitle">
+      Une équipe passionnée qui met son expertise au service de votre réussite.
+    </p>
+    <div class="founders-grid" id="foundersGrid"></div>
+  </div>
+</section> -->
+
+<!-- ================= POURQUOI NOUS ================= -->
+<!-- <section class="section why-us">
+    <div class="container">
+      <h2 class="section-title light">Pourquoi nous choisir ?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <h3>Réactivité</h3>
+          <p>Intervention rapide et support réactif 7j/7.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </div>
+          <h3>Expertise</h3>
+          <p>Une équipe certifiée et expérimentée dans tous les domaines IT.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Fiabilité</h3>
+          <p>Des solutions testées, sécurisées et garanties dans la durée.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <h3>Proximité</h3>
+          <p>Un interlocuteur dédié, à l'écoute de vos besoins.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+<!-- ================= À PROPOS ================= -->
+<section class="section about" id="apropos">
+  <div class="container about-grid">
+    <div class="about-avatars">
+      <div class="about-avatars-stack">
+        <div class="about-avatar about-avatar-1">
+          <img src="/logo/logo.png" alt="">
+        </div>
+        <!--  <div class="about-avatar about-avatar-2">
+          <img src="/about1.jpeg" alt="Aminata Traoré">
+        </div> -->
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="tag">Qui sommes-nous</p>
+      <h2>Une équipe passionnée à votre service</h2>
+      <p>
+        InformatService, c'est avant tout un groupe de développeurs passionnés.
+        Nous mettons notre expertise et notre enthousiasme au service des entreprises de toutes tailles pour leurs
+        projets informatiques, mais aussi pour la formation de leurs équipes.
+      </p>
+      <p>
+        Notre mission : rendre la technologie simple, accessible et performante — avec la rigueur d'un collectif et
+        l'énergie de passionnés.
+      </p>
+      <!--  <div class="stats">
+        <div><strong>200+</strong><span>Clients satisfaits</span></div>
+        <div><strong>500+</strong><span>Projets réalisés</span></div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= TÉMOIGNAGES ================= -->
+<!-- <section class="section testimonials">
+  <div class="container">
+    <h2 class="section-title">Ce que disent nos clients</h2>
+    <p class="section-subtitle">Leur satisfaction est notre meilleure publicité.</p>
+    <div class="testimonials-grid" id="testimonialsGrid"></div>
+  </div>
+</section> -->
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contactez-nous</h2>
+    <p class="section-subtitle">
+      Un projet, une question ? Écrivez-nous, nous répondons sous 24h.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Nos coordonnées</h3>
+        <ul>
+          <!--  <li>
+            <span class="ci-icon">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <div><strong>Adresse</strong><br>Cocody, Abidjan – Côte d'Ivoire</div>
+          </li> -->
+          <li>
+            <span class="ci-icon">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </span>
+            <div><strong>Téléphone</strong><br>+225 01 01 84 89 64</div>
+          </li>
+          <li>
+            <span class="ci-icon">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
+            <div><strong>Email</strong><br>contact@informatservice.com</div>
+          </li>
+          <!-- <li>
+            <span class="ci-icon">
+              <svg class="icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </span>
+            <div><strong>Horaires</strong><br>Lun – Ven : 8h – 18h</div>
+          </li> -->
+        </ul>
+        <app-whatsapp></app-whatsapp>
+      </div>
+
+      <!-- <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Nom complet *" required>
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email *" required>
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Téléphone">
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <input type="text" name="subject" placeholder="Sujet *" required>
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Votre message *" required></textarea>
+          <small class="error"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+          Envoyer le message
+        </button>
+        <p class="form-success" id="formSuccess">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          Message envoyé avec succès !
+        </p>
+      </form> -->
+    </div>
+  </div>
+</section>

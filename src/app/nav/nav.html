@@ -1,0 +1,45 @@
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-container">
+    <a routerLink="/" class="logo">
+      <img src="/logo/logo.png" alt="logo" srcset=""  width="25" >
+      <span class="logo-text">Informat<span>Service</span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a routerLink="/">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#formations">Formations</a></li>
+      <!-- <li><a href="#services">Services</a></li>
+      <li><a href="#projets">Réalisations</a></li>
+      <li><a href="#equipe">Équipe</a></li>  -->
+      
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème" title="Mode sombre / clair">
+        <svg class="icon icon-moon" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+        </svg>
+      </button>
+      <a routerLink="contact" class="btn btn-primary nav-cta">
+        <svg class="icon icon-sm" viewBox="0 0 24 24">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+        Discutons
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg class="icon" viewBox="0 0 24 24">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
