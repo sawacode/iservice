@@ -9,7 +9,7 @@
     </p>
 
     <!-- Carrousel de formations -->
-    <div class="formations-carousel-wrap" >
+    <div class="formations-carousel-wrap">
       <button class="formations-carousel-arrow formations-carousel-arrow-prev" id="fcPrev"
         aria-label="Formation précédente">
         <svg class="icon" viewBox="0 0 24 24">
@@ -65,8 +65,9 @@
     <!-- Carte vidéo de présentation -->
     <div class="video-promo">
       <div class="video-card">
-        
-        <iframe class="video-iframe" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fgroupe.informatservice%2Fvideos%2F624138430090529%2F&show_text=false&width=560&t=0"
+
+        <iframe class="video-iframe"
+          src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fgroupe.informatservice%2Fvideos%2F624138430090529%2F&show_text=false&width=560&t=0"
           title="Vidéo de présentation InformatService"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen loading="lazy">
@@ -123,7 +124,7 @@
 </section> -->
 
 <!-- ================= RÉALISATIONS ================= -->
-<!-- <section class="section projects" id="projets">
+<section class="section projects" id="projets">
   <div class="container">
     <p class="tag center">Nos réalisations</p>
     <h2 class="section-title">Projets réalisés</h2>
@@ -131,39 +132,44 @@
       Découvrez une sélection de projets que nous avons livrés avec succès à nos clients.
     </p>
 
-   <div class="projects-filter" id="projectsFilter">
+   <!--  <div class="projects-filter" id="projectsFilter">
       <button class="filter-btn active" data-filter="all">Tous</button>
       <button class="filter-btn" data-filter="web">Web</button>
       <button class="filter-btn" data-filter="mobile">Mobile</button>
       <button class="filter-btn" data-filter="cloud">Cloud</button>
       <button class="filter-btn" data-filter="securite">Sécurité</button>
-    </div> 
+    </div> -->
 
     <div class="projects-grid">
       @for (p of projects; track p.id) {
-      <div class="project-card">
-        <div class="project-image">
-          <span class="project-category-badge">{{p.category}}</span>
-          <img src="{{p.image}}" alt="${p.title}" loading="lazy">
-          <div class="project-overlay">
-            <p>{{p.description}}</p>
-            <div class="project-tags">
-               {p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')} 
+        <div  class="project-card">
+          <a href="{{p.link}}" target="_blank">
+          <div class="project-image">
+            <span class="project-category-badge">{{p.category}}</span>
+            <img src="{{p.image}}" alt="{{p.title}}" loading="lazy">
+            <div class="project-overlay">
+              <p>{{p.description}}</p>
+              <div class="project-tags">
+                @for(tag of p.tags; track tag){
+                  <span class="project-tag">{{tag}}</span>
+                }
+              </div>
             </div>
           </div>
-        </div>
-        <div class="project-body">
-          <h3>{{p.title}}</h3>
-          <div class="project-meta">
-            <span class="project-client"></span>
-            <span class="project-year">{{p.year}}</span>
+          </a>
+          <div class="project-body">
+            <h3>{{p.title}}</h3>
+            <div class="project-meta">
+              <a href="{{p.link}}" target="_blank" class="project-client">Voir</a>
+              <span class="project-year">{{p.year}}</span>
+            </div>
           </div>
+          
         </div>
-      </div>
       }
     </div>
   </div>
-</section> -->
+</section>
 
 <!-- ================= FONDATEURS ================= -->
 <!-- <section class="section founders" id="equipe">

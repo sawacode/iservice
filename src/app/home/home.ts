@@ -106,47 +106,60 @@ export class HomeComponent {
 
   readonly projects = [
     {
-      id:1,
-      title: 'Plateforme e-commerce AgroPlus', client: 'Groupe AgroPlus', year: '2024', category: 'web',
-      image: '',
-      description: 'Boutique en ligne complète avec gestion des stocks, paiement mobile money et tableau de bord administrateur.',
-      tags: ['Angular', 'Node.js', 'Stripe', 'MongoDB']
+      id: 1,
+      title: 'monpressing', client: 'Grouper', year: '2026', category: 'mobile',
+      image: 'project/monpressing.jpg',
+      description: 'Application de gestion de pressing',
+      tags: ['Flutter', 'NestJs', 'API REST', 'MySql'],
+      link: 'https://play.google.com/store/apps/details?id=com.dominantiscorporation.monpressing&pcampaignid=web_share'
     },
     {
-      id:2,
-      title: 'Application mobile Santé+', client: 'Cabinet Médical Espoir', year: '2024', category: 'mobile',
-      image: '',
-      description: 'Application de prise de rendez-vous, dossier patient numérique et rappels automatiques par SMS.',
-      tags: ['Flutter', 'Firebase', 'API REST']
+      id: 2,
+      title: 'Plateforme e-commerce ', client: 'Groupe', year: '2023', category: 'Site Web',
+      image: 'project/bilivente.jpg',
+      description: 'Boutique en ligne complète ,tableau de bord administrateur.',
+      tags: ['Laravel', 'PHP', 'Javascript', 'MySql'],
+      link: 'https://bilivente.informatservice.com'
+    },
+    {
+      id: 3,
+      title: 'Plateforme immobilière', client: 'Grouper', year: '2024', category: 'Site Web',
+      image: 'project/mypiole.jpg',
+      description: 'Recherche de bien immobilier en location et vente, promotion de centre de réfugiés.',
+      tags: ['Laravel', 'PHP', 'JavaScript', 'MySql'],
+      link: 'https://www.mypiole.com/'
     },
     
+
   ];
 
   readonly services = [
-      {
-        icon: '<svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', title: 'Développement Web & Mobile',
-        description: 'Applications sur mesure en Angular, React, Node.js, Flutter. Sites vitrines, e-commerce, plateformes métier.'
-      },
-      {
-        icon: 'shield', title: 'Cybersécurité',
-        description: 'Audit de sécurité, protection des données, mise en conformité, tests d\'intrusion et sensibilisation.'
-      },
-      {
-        icon: 'cloud', title: 'Cloud & Hébergement',
-        description: 'Migration cloud (AWS, Azure, GCP), hébergement, sauvegarde, haute disponibilité et scalabilité.'
-      },
-      {
-        icon: 'wrench', title: 'Infogérance & Maintenance',
-        description: 'Support technique, maintenance préventive, supervision 24/7 de votre parc informatique.'
-      },
-      {
-        icon: 'network', title: 'Réseaux & Infrastructure',
-        description: 'Installation et configuration de réseaux, serveurs, VPN, Wi-Fi professionnel.'
-      },
-      {
-        icon: 'graduation', title: 'Formation & Conseil',
-        description: 'Formations sur mesure pour vos équipes et accompagnement stratégique dans vos projets IT.'
-      },
-    ];
+    {
+      icon: '<svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>', title: 'Développement Web & Mobile',
+      description: 'Applications sur mesure en Angular, React, Node.js, Flutter. Sites vitrines, e-commerce, plateformes métier.'
+    },
+    {
+      icon: 'shield', title: 'Cybersécurité',
+      description: 'Audit de sécurité, protection des données, mise en conformité, tests d\'intrusion et sensibilisation.'
+    },
+    {
+      icon: 'cloud', title: 'Cloud & Hébergement',
+      description: 'Migration cloud (AWS, Azure, GCP), hébergement, sauvegarde, haute disponibilité et scalabilité.'
+    },
+    {
+      icon: 'wrench', title: 'Infogérance & Maintenance',
+      description: 'Support technique, maintenance préventive, supervision 24/7 de votre parc informatique.'
+    },
+    {
+      icon: 'network', title: 'Réseaux & Infrastructure',
+      description: 'Installation et configuration de réseaux, serveurs, VPN, Wi-Fi professionnel.'
+    },
+    {
+      icon: 'graduation', title: 'Formation & Conseil',
+      description: 'Formations sur mesure pour vos équipes et accompagnement stratégique dans vos projets IT.'
+    },
+  ];
+
+
 
 }
